@@ -9,11 +9,11 @@ function App() {
 
   return (
     <div className='px-4'>
-      {/* <Navbar />
+      <Navbar />
       <Hero />
       <About/>
       <Tool/>
-      <Cube/> */}
+      <Cube/>
       <Project/>
     </div>
   )
