@@ -21,3 +21,9 @@
 .animate-rotate {
     animation: rotate-cube 10s ease-in-out infinite;
 }
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+}

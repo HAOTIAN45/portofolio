@@ -3,7 +3,7 @@ export default function Cube() {
     const HALF_SIZE = CUBE_SIZE / 2 + 4;
 
     return (
-        <div className="flex justify-center items-center mt-32" style={{ perspective: '1000px' }}>
+        <div className="flex justify-center items-center mt-32" style={{ perspective: '1000px' }} id="cube">
             <div className="relative w-52 h-52 transition-transform duration-4000 ease-in-out animate-rotate" style={{ transformStyle: 'preserve-3d', transform: 'rotateX(-30deg) rotateY(45deg)' }}>
                 <div className="absolute w-52 h-52 bg-red-800/ text-white flex items-center justify-center text-xl [backface-visibility: hidden]" style={{
                     transform: `translateZ(${HALF_SIZE}px)`, backgroundImage: 'url(milky-way.avif)',
