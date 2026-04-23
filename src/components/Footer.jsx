@@ -138,9 +138,9 @@ export default function Footer() {
             <p className="footer-copy">
               © {new Date().getFullYear()} Christian Dwi Nugroho. All rights reserved.
             </p>
-            <p className="footer-copy">
+            {/* <p className="footer-copy">
               Built with React & Tailwind CSS
-            </p>
+            </p> */}
           </div>
 
         </div>

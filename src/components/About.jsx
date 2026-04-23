@@ -164,7 +164,7 @@ export default function About() {
             <div className="animate-on-scroll">
               <p className="about-text mb-6">
                 I'm a passionate fullstack developer based in Magelang, Indonesia. 
-                With over 4 years of experience in web development, I specialize in 
+                With over 1 years of experience in web development, I specialize in 
                 building responsive, performant, and user-centric applications.
               </p>
               <p className="about-text mb-6">
