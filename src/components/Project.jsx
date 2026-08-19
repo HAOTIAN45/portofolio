@@ -81,7 +81,7 @@ export default function Projects() {
       ]
     },
     {
-      id: 4,
+      id: 3,
       title: "Sosial Media App",
       category: "website",
       description: "Platform media sosial dengan fitur lengkap seperti posting, like, comment, dan real-time chat.",
@@ -105,7 +105,7 @@ export default function Projects() {
       ]
     },
     {
-      id: 5,
+      id: 4,
       title: "3D Logo Animation - Product",
       category: "design",
       description: "Animasi logo 3D profesional untuk branding produk menggunakan Blender.",
@@ -124,7 +124,7 @@ export default function Projects() {
       ]
     },
     {
-      id: 6,
+      id: 5,
       title: "3D Logo Animation - Corporate",
       category: "design",
       description: "Animasi logo 3D untuk corporate branding dengan gaya profesional dan elegan.",
@@ -141,17 +141,117 @@ export default function Projects() {
         "Professional color grading",
         "4K output ready"
       ]
-    }
+    },
+    {
+      id: 6,
+      title: "Kinetic Typography Motion",
+      category: "video",
+      description: "Motion graphic dengan fokus pada kinetic typography dan animasi teks yang dinamis.",
+      longDescription: "Project motion graphic yang mengutamakan kinetic typography sebagai elemen visual utama. Menggunakan perpaduan animasi teks, timing, transisi, dan sinkronisasi dengan audio untuk menghasilkan video yang dinamis dan menarik.",
+      tech: ["CapCut"],
+      images: ["assets/project/MotionGraphic1.mp4"],
+      videoUrl: "assets/project/All-B-Roll.mp4",
+      isVideo: true,
+      liveLink: "#",
+      features: [
+        "Kinetic typography",
+        "Dynamic text animation",
+        "Smooth transitions",
+        "Beat synchronization",
+        "Short-form video editing"
+      ]
+    },
+
+    {
+      id: 7,
+      title: "Dynamic Motion Graphic",
+      category: "video",
+      description: "Video motion graphic dengan kombinasi typography, shape animation, dan transisi dinamis.",
+      longDescription: "Project motion graphic yang mengeksplorasi kombinasi antara typography, shape animation, visual transitions, dan timing. Dibuat untuk menghasilkan video pendek dengan visual yang modern dan dinamis.",
+      tech: ["CapCut"],
+      images: ["assets/project/MotionGraphic2.mp4"],
+      videoUrl: "assets/project/B-Roll-2.mp4",
+      isVideo: true,
+      liveLink: "#",
+      features: [
+        "Shape animation",
+        "Typography animation",
+        "Dynamic transitions",
+        "Visual synchronization",
+        "Creative composition"
+      ]
+    },
+
+    {
+      id: 8,
+      title: "Social Media Motion",
+      category: "video",
+      description: "Motion graphic pendek yang dirancang untuk kebutuhan konten media sosial.",
+      longDescription: "Project motion graphic yang dibuat untuk format short-form content pada media sosial. Menggabungkan typography, transitions, visual effects, dan pacing yang cepat untuk menghasilkan konten yang engaging.",
+      tech: ["CapCut"],
+      images: ["assets/project/MotionGraphic3.mp4"],
+      videoUrl: "assets/project/B-Roll-3.mp4",
+      isVideo: true,
+      liveLink: "#",
+      features: [
+        "Short-form content",
+        "Motion graphics",
+        "Dynamic typography",
+        "Fast-paced editing",
+        "Social media optimized"
+      ]
+    },
+
+    {
+      id: 9,
+      title: "Minimalist Motion Design",
+      category: "video",
+      description: "Motion graphic minimalis dengan fokus pada typography, timing, dan clean visual composition.",
+      longDescription: "Project motion design dengan pendekatan minimalis yang mengutamakan typography, spacing, timing, dan smooth transitions. Konsep ini dibuat untuk menghasilkan visual yang sederhana namun tetap memiliki daya tarik.",
+      tech: ["CapCut"],
+      images: ["assets/project/MotionGraphic4.mp4"],
+      videoUrl: "assets/project/B-Roll-4.mp4",
+      isVideo: true,
+      liveLink: "#",
+      features: [
+        "Minimalist motion",
+        "Typography animation",
+        "Clean composition",
+        "Smooth transitions",
+        "Visual storytelling"
+      ]
+    },
+
+    {
+      id: 10,
+      title: "Podcast Motion Graphic",
+      category: "video",
+      description: "Video editing podcast berdurasi pendek dengan kombinasi motion graphic dan dynamic typography.",
+      longDescription: "Project video editing podcast dalam format short-form content berdurasi 20 hingga 40 detik. Menggabungkan potongan percakapan, dynamic captions, motion graphic, transitions, dan pacing yang disesuaikan dengan kebutuhan konten media sosial.",
+      tech: ["CapCut"],
+      images: ["assets/project/MotionGraphic5.mp4"],
+      videoUrl: "assets/project/B-Roll-5.mp4",
+      isVideo: true,
+      liveLink: "#",
+      features: [
+        "Podcast video editing",
+        "Dynamic captions",
+        "Motion typography",
+        "Social media format",
+        "Short-form storytelling"
+      ]
+    },
   ]
 
   const filters = [
     { id: "all", label: "All Work" },
     { id: "website", label: "Websites" },
-    { id: "design", label: "Design & 3D" }
+    { id: "design", label: "Design & 3D" },
+    { id: "video", label: "Video & Animation" }
   ]
 
-  const filteredProjects = filter === "all" 
-    ? projects 
+  const filteredProjects = filter === "all"
+    ? projects
     : projects.filter(p => p.category === filter)
 
   const openModal = (project) => {
@@ -386,7 +486,7 @@ export default function Projects() {
             <span className="section-badge mb-4">✦ Portfolio</span>
             <h2 className="section-title mt-4">Featured Projects</h2>
             <p className="text-zinc-500 mt-4 max-w-2xl mx-auto">
-              Berikut adalah beberapa project yang telah saya kerjakan, 
+              Berikut adalah beberapa project yang telah saya kerjakan,
               mulai dari website interaktif hingga animasi 3D profesional.
             </p>
           </div>
@@ -407,15 +507,15 @@ export default function Projects() {
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project, index) => (
-              <div 
-                key={project.id} 
+              <div
+                key={project.id}
                 className="project-card rounded-lg overflow-hidden animate-on-scroll"
                 onClick={() => openModal(project)}
                 style={{ transitionDelay: `${index * 0.05}s` }}
               >
                 <div className="overflow-hidden">
                   {project.isVideo ? (
-                    <video 
+                    <video
                       src={project.videoUrl}
                       className="project-image"
                       muted
@@ -424,8 +524,8 @@ export default function Projects() {
                       playsInline
                     />
                   ) : (
-                    <img 
-                      src={project.images[0]} 
+                    <img
+                      src={project.images[0]}
                       alt={project.title}
                       className="project-image"
                     />
@@ -435,7 +535,12 @@ export default function Projects() {
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="text-white font-serif text-lg">{project.title}</h3>
                     <span className="text-zinc-500 text-xs font-mono uppercase">
-                      {project.category === 'website' ? 'Website' : '3D Design'}
+                      {project.category === 'website'
+                        ? 'Website'
+                        : project.category === 'design'
+                          ? '3D Design'
+                          : 'Video'
+                      }
                     </span>
                   </div>
                   <p className="text-zinc-500 text-sm mb-3 line-clamp-2">
@@ -462,7 +567,7 @@ export default function Projects() {
               {/* Image/Video Viewer */}
               <div className="modal-image-container">
                 {selectedProject.isVideo ? (
-                  <video 
+                  <video
                     src={selectedProject.videoUrl}
                     className="modal-video"
                     controls
@@ -471,8 +576,8 @@ export default function Projects() {
                   />
                 ) : (
                   <>
-                    <img 
-                      src={selectedProject.images[currentImageIndex]} 
+                    <img
+                      src={selectedProject.images[currentImageIndex]}
                       alt={selectedProject.title}
                       className="modal-image"
                     />
@@ -480,12 +585,12 @@ export default function Projects() {
                       <>
                         <button onClick={prevImage} className="nav-button prev">
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round"/>
+                            <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" />
                           </svg>
                         </button>
                         <button onClick={nextImage} className="nav-button next">
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round"/>
+                            <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" />
                           </svg>
                         </button>
                         <div className="image-counter">
@@ -503,12 +608,16 @@ export default function Projects() {
                   <div>
                     <h3 className="text-white font-serif text-2xl mb-1">{selectedProject.title}</h3>
                     <span className="text-zinc-500 text-xs font-mono uppercase">
-                      {selectedProject.category === 'website' ? 'Website Development' : '3D Animation'}
+                      {selectedProject.category === 'website'
+                        ? 'Website Development'
+                        : selectedProject.category === 'design'
+                          ? '3D Design'
+                          : 'Video'}
                     </span>
                   </div>
                   <button onClick={closeModal} className="text-zinc-400 hover:text-white">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <path d="M18 6L6 18M6 6l12 12" strokeWidth="2" strokeLinecap="round"/>
+                      <path d="M18 6L6 18M6 6l12 12" strokeWidth="2" strokeLinecap="round" />
                     </svg>
                   </button>
                 </div>
@@ -536,18 +645,18 @@ export default function Projects() {
                 </div>
 
                 <div className="flex gap-4 pt-4 border-t border-zinc-800">
-                  <a 
-                    href={selectedProject.liveLink} 
-                    target="_blank" 
+                  <a
+                    href={selectedProject.liveLink}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-zinc-400 hover:text-white text-sm font-mono transition-colors"
                   >
                     Live Demo →
                   </a>
                   {selectedProject.githubLink && (
-                    <a 
-                      href={selectedProject.githubLink} 
-                      target="_blank" 
+                    <a
+                      href={selectedProject.githubLink}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-zinc-400 hover:text-white text-sm font-mono transition-colors"
                     >
